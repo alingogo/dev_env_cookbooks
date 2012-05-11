@@ -15,6 +15,24 @@ me = node[:main_user]
 
 case node[:platform]
 when "ubuntu"
+  ruby "backup vim" do
+    user me
+    cwd "/home/#{me}"
+    code <<-EOH
+    name = ".vim"
+    if File.directory?(name)
+      case File::ftype(name)
+      when "directory"
+      	`cp -rp #{name} #{name + '_' + Time.now.strftime("%Y%m%d%H%M%S")}`
+        Dir.rmdir(name)
+      when "link"
+      	File.unlink(name)
+      end
+    end
+    File.unlink(".vimrc") if File.exist?(".vimrc")
+    EOH
+  end
+
   directory "/home/#{me}/eddie-vim" do
     owner me
     group me
@@ -37,8 +55,8 @@ when "ubuntu"
     cd eddie-vim
     ./update.sh
     cd ..
-    ln -s eddie-vim .vimtest
-    ln -s eddie-vim/vimrc .vimrctest
+    ln -s eddie-vim .vim
+    ln -s eddie-vim/vimrc .vimrc
     EOH
   end
 when "centos"
