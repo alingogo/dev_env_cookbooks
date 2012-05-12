@@ -1,3 +1,6 @@
 {
-    "run_list": [ "recipe[vimrc]" ]
+    "run_list": [
+                 "recipe[vimrc]"
+                 //"recipe[ctags]"
+                ]
 }

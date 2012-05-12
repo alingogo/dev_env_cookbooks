@@ -7,9 +7,9 @@
 # All rights reserved - Do Not Redistribute
 #
 
-#include_recipe "git"
-#include_recipe "vim"
-#include_recipe "ctags"
+include_recipe "git"
+include_recipe "vim"
+include_recipe "ctags"
 
 me = node[:main_user]
 
