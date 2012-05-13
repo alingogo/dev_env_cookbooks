@@ -4,3 +4,9 @@
 [submodule "vim"]
 	path = vim
 	url = git://github.com/opscode-cookbooks/vim.git
+[submodule "subversion"]
+	path = subversion
+	url = git://github.com/opscode-cookbooks/subversion.git
+[submodule "build-essential"]
+	path = build-essential
+	url = git://github.com/opscode-cookbooks/build-essential.git
