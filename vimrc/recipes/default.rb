@@ -14,7 +14,7 @@ include_recipe "ctags"
 me = node[:main_user]
 
 case node[:platform]
-when "ubuntu"
+when "ubuntu", "centos"
   ruby "backup vim" do
     user me
     cwd "/home/#{me}"
@@ -59,8 +59,6 @@ when "ubuntu"
     ln -s eddie-vim/vimrc .vimrc
     EOH
   end
-when "centos"
-  #ToDo
 when "mac"
   #ToDo
 else
