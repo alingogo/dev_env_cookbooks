@@ -10,3 +10,9 @@
 [submodule "build-essential"]
 	path = build-essential
 	url = git://github.com/opscode-cookbooks/build-essential.git
+[submodule "mongodb"]
+	path = mongodb
+	url = git://github.com/edelight/chef-cookbooks.git
+[submodule "chef-cookbooks"]
+	path = chef-cookbooks
+	url = git://github.com/edelight/chef-cookbooks.git
