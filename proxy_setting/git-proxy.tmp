@@ -1,0 +1,2 @@
+#!/bin/sh
+/usr/bin/connect -S -user-@-sshproxy- $1 $2

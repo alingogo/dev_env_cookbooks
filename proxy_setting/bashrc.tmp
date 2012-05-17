@@ -1,0 +1,27 @@
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+# User specific aliases and functions
+user=-user-
+passwd=-passwd-
+proxy=-proxy-
+svnhostname=-svnhostname-
+
+export http_proxy="http://$user:$passwd@$proxy/"
+export HTTP_PROXY=$http_proxy
+export https_proxy="https://$user:$passwd@$proxy/"
+export HTTPS_PROXY=$https_proxy
+export ftp_proxy="ftp://$user:$passwd@$proxy/"
+export FTP_PROXY=$ftp_proxy
+
+export SOCKS5_USER=$user
+export SOCKS5_PASSWD=$passwd
+
+export GIT_PROXY_COMMAND=/usr/bin/git-proxy
+
+export trunk="http://$svnhostname/svn/quanp-world/trunk"
+export try="http://$svnhostname/svn/quanp-world/branches/TRY"
